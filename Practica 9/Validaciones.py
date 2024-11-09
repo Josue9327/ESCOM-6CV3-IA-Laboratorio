@@ -6,7 +6,7 @@ class Validaciones:
         self.matriz = self.inicializar_matriz(nombreArchivo)
 
     #Metodo para separar los datos en 70-30
-    def hold_out(self, matriz):
+    def hold_out(matriz):
         #Calculamos el numero de elementos que seran para prueba y entremamiento
         numDatosPrueba = round(len(matriz) * .70)
         numDatosEntrenamiento = len(matriz) - numDatosPrueba
@@ -25,7 +25,7 @@ class Validaciones:
         return matrizEntrenamiento, matrizPrueba
 
 
-    def ten_fold_cross_validation(self, matriz):
+    def ten_fold_cross_validation(matriz):
         #Mezclamos los datos de manera aleatoria
         random.shuffle(matriz)
         #Calculamos el tamaño de cada fold
@@ -41,15 +41,13 @@ class Validaciones:
         #Retornamos los 10 folds
         return folds
         
-    def leave_one_out(self, matriz):
+    def leave_one_out(matriz):
         folds = []
         for i in range(len(matriz)):
             #Dividimos los datos en dos i veces primero en una validación y el resto para entrenamiento
             datos_entrenamiento = matriz[:i] + matriz[i+1:]
-            dato_validacion = matriz[i]
+            dato_validacion = matriz[i:i+1]
             folds.append((datos_entrenamiento, dato_validacion))
-        for elem in folds:
-            print(elem[1])
         #Retornamos las i tuplas en las cuales cada una contiene su conjunto de entrenamiento y su valor de validacion    
         return folds
 
@@ -59,6 +57,5 @@ class Validaciones:
         with open(file_path, 'r') as file:
             for line in file:
                 row = line.strip().split(',') 
-                data_matrix.append(row)     
-        self.leave_one_out(data_matrix)    
+                data_matrix.append(row)      
         return data_matrix    
