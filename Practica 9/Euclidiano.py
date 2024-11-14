@@ -41,7 +41,3 @@ class Euclidiano:
         #Buscamos la clase con la distancia más corta
         clase_calculada = min(distancias, key=distancias.get)
         return clase_calculada
-
-
-
-
