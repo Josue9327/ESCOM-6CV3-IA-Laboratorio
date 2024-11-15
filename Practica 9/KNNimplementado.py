@@ -1,5 +1,5 @@
 from Validaciones import Validaciones
-from KNN import KNN  # Asegúrate de que el archivo 'KNN.py' esté disponible
+from KNN import KNN  
 import numpy as np
 
 archivo = 'bezdekIris.data'
