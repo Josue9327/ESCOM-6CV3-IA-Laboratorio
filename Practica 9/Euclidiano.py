@@ -9,7 +9,6 @@ class Euclidiano:
     def calcular_vector_promedio(self):
         #Creamos un diccionario para almacenar los datos agrupándolos por clase
         clases = {}
-        
         #Iteramos sobre cada fila y agregamos al diccionario la clase si aun no está y sus puntos
         for fila in self.datos_entrenamiento:
             punto = np.array(fila[:len(fila)-1], dtype=float)

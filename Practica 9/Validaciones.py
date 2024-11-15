@@ -8,7 +8,7 @@ class Validaciones:
     #Metodo para separar los datos en 70-30
     def hold_out(matriz):
         #Calculamos el numero de elementos que seran para prueba y entremamiento
-        numDatosPrueba = round(len(matriz) * .70)
+        numDatosPrueba = round(len(matriz) * .30)
         numDatosEntrenamiento = len(matriz) - numDatosPrueba
         #Declaramos dos matrices para llenarlos con los datos que seran de prueba y entremamiento
         matrizPrueba = []
