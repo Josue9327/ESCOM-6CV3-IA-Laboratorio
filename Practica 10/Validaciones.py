@@ -4,7 +4,6 @@ class Validaciones:
     # Constructor de la clase donde inicializamos el dataset
     def __init__(self, nombreArchivo='bezdekIris.data'):
         self.matriz = self.inicializar_matriz(nombreArchivo)
-
     #Metodo para separar los datos en 70-30
     def hold_out(matriz):
         #Calculamos el numero de elementos que seran para prueba y entremamiento
@@ -23,8 +22,6 @@ class Validaciones:
             matrizPrueba.append(matriz.pop(numero_aleatorio)) 
         #Retornamos las matrices de prueba y entrenamiento
         return matrizEntrenamiento, matrizPrueba
-
-
     def ten_fold_cross_validation(matriz):
         #Mezclamos los datos de manera aleatoria
         random.shuffle(matriz)
@@ -39,8 +36,7 @@ class Validaciones:
             else:
                 folds.append(matriz[inicio:inicio + tamano_fold])
         #Retornamos los 10 folds
-        return folds
-        
+        return folds     
     def leave_one_out(matriz):
         folds = []
         for i in range(len(matriz)):
@@ -50,7 +46,6 @@ class Validaciones:
             folds.append((datos_entrenamiento, dato_validacion))
         #Retornamos las i tuplas en las cuales cada una contiene su conjunto de entrenamiento y su valor de validacion    
         return folds
-
     def inicializar_matriz(self, nombreArchivo):
         file_path = os.path.join(os.path.dirname(__file__), nombreArchivo)
         data_matrix = []
