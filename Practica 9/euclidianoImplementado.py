@@ -2,7 +2,7 @@ from Validaciones import Validaciones
 from Euclidiano import Euclidiano
 import numpy as np
 
-archivo = 'bezdekIris.data'
+archivo = 'cleaned_merged_heart_dataset.csv'
 ##########################   Euclidiano con hold:out   ######################################
 def euclidiano_hold_out():
     #Cargamos la matriz
